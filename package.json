@@ -1,9 +1,9 @@
 {
     "name": "@ilya7u/yeoman",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "repository": "git://github.com/ilya7u/yeoman.git",
-    "main": "out/index.js",
-    "types": "out/index.d.ts",
+    "main": "out/src/index.js",
+    "types": "out/src/index.d.ts",
     "scripts": {
         "build": "npm run clean && tsc && npm run copydeps",
         "copydeps": "copyfiles -a -u 1 \"generators/*/templates/**\" out/generators && copyfiles -u 1 ./generators/package.json ./out",
@@ -35,7 +35,7 @@
     },
     "author": "Ilia Skripchenko <ilya7u@gmail.com> (https://ilya7u.com/)",
     "files": [
-        "out"
+        "out/src"
     ],
     "publishConfig": {
         "access": "public"
