@@ -1,6 +1,6 @@
 {
     "name": "@ilya7u/yeoman",
-    "version": "1.0.18",
+    "version": "1.0.19",
     "repository": "git://github.com/ilya7u/yeoman.git",
     "main": "out/src/index.js",
     "types": "out/src/index.d.ts",
@@ -14,6 +14,7 @@
         "prepublishOnly": "npm run build && npm version patch --force"
     },
     "dependencies": {
+        "ejs": "^3.1.9",
         "mrm-core": "^7.1.22",
         "yeoman-generator": "^5.8.0"
     },
