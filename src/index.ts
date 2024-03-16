@@ -17,6 +17,9 @@ import {
     yaml,
 } from 'mrm-core';
 
+import { Question } from 'yeoman-generator';
+export { Question };
+
 export { File, Ini, Json, Lines, Markdown, Template, Yaml, file, ini, json, lines, markdown, template, yaml };
 
 const BEGIN = `'use strict';
