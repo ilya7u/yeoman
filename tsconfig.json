@@ -20,6 +20,6 @@
             "@/*": ["src/*"]
         }
     },
-    "include": ["src/**/*.ts"],
-    "exclude": ["node_modules"]
+    "include": ["src/**/*.ts", "generators/**/*.ts"],
+    "exclude": ["node_modules", "tests/**/*.ts", "generators/*/templates"]
 }

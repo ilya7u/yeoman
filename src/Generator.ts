@@ -1,5 +1,6 @@
-import YeomanGenerator from 'yeoman-generator';
+import YeomanGenerator, { GeneratorOptions } from 'yeoman-generator';
 import path from 'path';
+import { inspect } from 'util';
 import fs from 'fs';
 
 function getFiles(baseDir: string, subDirs: string[] = []) {
@@ -14,9 +15,13 @@ function getFiles(baseDir: string, subDirs: string[] = []) {
     return files;
 }
 
-export class Generator extends YeomanGenerator {
+export class Generator<T extends GeneratorOptions = GeneratorOptions> extends YeomanGenerator<T> {
     constructor(args, options) {
         super(args, options);
+    }
+
+    dump(data) {
+        console.log(inspect(data, true, 5, true));
     }
 
     copyTemplates(data: any = {}) {

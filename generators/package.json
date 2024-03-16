@@ -1,0 +1,12 @@
+{
+    "name": "generator-dummy",
+    "version": "1.0.0",
+    "files": [
+        "generators"
+    ],
+    "dependencies": {
+        "mrm-core": "^7.1.14",
+        "yeoman-generator": "^5.8.0"
+    },
+    "author": "Ilia Skripchenko <ilya7u@gmail.com> (https://ilya7u.com/)"
+}
