@@ -6,6 +6,12 @@ export default class extends Generator {
     }
 
     writing() {
-        this.fs.copyTpl(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
+        this.copyTemplates({
+            replaceOptions: {
+                aaa: 'bbb',
+                project: 'blabla',
+            },
+        });
+        // this.fs.copyTpl(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
     }
 }
