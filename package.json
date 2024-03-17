@@ -1,6 +1,6 @@
 {
     "name": "@ilya7u/yeoman",
-    "version": "1.0.20",
+    "version": "1.0.21",
     "repository": "git://github.com/ilya7u/yeoman.git",
     "main": "out/src/index.js",
     "types": "out/src/index.d.ts",
