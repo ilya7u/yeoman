@@ -40,6 +40,15 @@ export class Generator extends YeomanGenerator {
         console.log(inspect(data, true, 5, true));
     }
 
+    runSync(cmd: string) {
+        const parts = cmd.split(/\s+/);
+        if (parts.length === 0) {
+            return;
+        }
+        const first = parts.shift();
+        this.spawnCommandSync(first, parts);
+    }
+
     copyTemplates(options: CopyTemplatesOptions = {}) {
         options.replaceOptions = options.replaceOptions || {};
         const files = getFiles(this.templatePath());
