@@ -1,8 +1,9 @@
-import YeomanGenerator from 'yeoman-generator';
+import YeomanGenerator, { BaseOptions } from 'yeoman-generator';
 import { Data as TemplateData, Options as TemplateOptions } from 'ejs';
 import path from 'path';
 import { inspect } from 'util';
 import fs from 'fs';
+export { BaseOptions };
 // import { createEnv } from 'yeoman-environment';
 
 interface AnyProperties {
@@ -33,7 +34,7 @@ function getFiles(baseDir: string, subDirs: string[] = []) {
     return files;
 }
 
-export class Generator extends YeomanGenerator {
+export class Generator<O extends BaseOptions = BaseOptions> extends YeomanGenerator<O> {
     // protected env;
     constructor(args, options) {
         super(args, options);
