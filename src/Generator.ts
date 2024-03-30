@@ -3,12 +3,14 @@ import { Data as TemplateData, Options as TemplateOptions } from 'ejs';
 import path from 'path';
 import { inspect } from 'util';
 import fs from 'fs';
+// import { createEnv } from 'yeoman-environment';
 
 interface AnyProperties {
     [prop: string]: any;
 }
 
 export type CopyOptions = AnyProperties & {
+    process?: (contents: string | Buffer, filepath: string, destination: string) => string | Buffer;
     processDestinationPath?: (string: any) => string;
 };
 
@@ -32,8 +34,10 @@ function getFiles(baseDir: string, subDirs: string[] = []) {
 }
 
 export class Generator extends YeomanGenerator {
+    // protected env;
     constructor(args, options) {
         super(args, options);
+        // this.env = createEnv();
     }
 
     dump(data) {
@@ -46,7 +50,7 @@ export class Generator extends YeomanGenerator {
             return;
         }
         const first = parts.shift();
-        this.spawnCommandSync(first, parts);
+        this.spawnSync(first, parts);
     }
 
     copyTemplates(options: CopyTemplatesOptions = {}) {
