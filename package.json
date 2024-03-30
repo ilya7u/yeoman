@@ -1,6 +1,6 @@
 {
     "name": "@ilya7u/yeoman",
-    "version": "1.0.22",
+    "version": "1.0.23",
     "repository": "git://github.com/ilya7u/yeoman.git",
     "main": "out/src/index.js",
     "types": "out/src/index.d.ts",
@@ -16,13 +16,13 @@
     "dependencies": {
         "ejs": "^3.1.9",
         "mrm-core": "^7.1.22",
-        "yeoman-generator": "^5.8.0"
+        "yeoman-generator": "^7.1.1"
     },
     "devDependencies": {
-        "@types/node": "^20.11.28",
-        "@types/yeoman-generator": "^5.2.14",
-        "@typescript-eslint/eslint-plugin": "^7.2.0",
-        "@typescript-eslint/parser": "^7.2.0",
+        "@types/node": "^20.11.30",
+        "@typescript-eslint/eslint-plugin": "^7.4.0",
+        "@typescript-eslint/parser": "^7.4.0",
+        "@yeoman/types": "^1.2.0",
         "copyfiles": "^2.4.1",
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
@@ -32,7 +32,7 @@
         "rimraf": "^5.0.5",
         "ts-node": "^10.9.2",
         "ts-node-dev": "^2.0.0",
-        "typescript": "^5.4.2"
+        "typescript": "^5.4.3"
     },
     "author": "Ilia Skripchenko <ilya7u@gmail.com> (https://ilya7u.com/)",
     "files": [
