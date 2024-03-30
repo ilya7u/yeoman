@@ -1,4 +1,4 @@
-import { Generator } from '../../src';
+import { Generator } from '../../src/index.mjs';
 
 export default class extends Generator {
     constructor(args, options) {

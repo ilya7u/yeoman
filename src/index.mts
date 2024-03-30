@@ -1,23 +1,23 @@
 import fs from 'fs';
 import path from 'path';
-import {
-    File,
-    Ini,
-    Json,
-    Lines,
-    Markdown,
-    Template,
-    Yaml,
-    file,
-    ini,
-    json,
-    lines,
-    markdown,
-    template,
-    yaml,
-} from 'mrm-core';
+// import {
+//     File,
+//     Ini,
+//     Json,
+//     Lines,
+//     Markdown,
+//     Template,
+//     Yaml,
+//     file,
+//     ini,
+//     json,
+//     lines,
+//     markdown,
+//     template,
+//     yaml,
+// } from 'mrm-core';
 
-export { File, Ini, Json, Lines, Markdown, Template, Yaml, file, ini, json, lines, markdown, template, yaml };
+// export { File, Ini, Json, Lines, Markdown, Template, Yaml, file, ini, json, lines, markdown, template, yaml };
 
 const BEGIN = `'use strict';
 
@@ -27,7 +27,7 @@ module.exports = {
 const END = `};
 `;
 
-export * from './Generator';
+export * from './Generator.mjs';
 
 export const generateIndex = (generatorsPath: string, indexPath: string) => {
     if (!indexPath.endsWith('index.js')) {

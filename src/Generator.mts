@@ -4,7 +4,7 @@ import path from 'path';
 import { inspect } from 'util';
 import fs from 'fs';
 export { BaseOptions };
-// import { createEnv } from 'yeoman-environment';
+import { createEnv } from 'yeoman-environment';
 
 interface AnyProperties {
     [prop: string]: any;
@@ -23,7 +23,7 @@ export interface CopyTemplatesOptions {
 }
 
 function getFiles(baseDir: string, subDirs: string[] = []) {
-    const files = [];
+    const files: any[] = [];
     for (const item of fs.readdirSync(path.resolve(baseDir, ...subDirs), { withFileTypes: true })) {
         if (item.isDirectory()) {
             files.push(...getFiles(baseDir, [...subDirs, item.name]));
@@ -35,10 +35,10 @@ function getFiles(baseDir: string, subDirs: string[] = []) {
 }
 
 export class Generator<O extends BaseOptions = BaseOptions> extends YeomanGenerator<O> {
-    // protected env;
+    #env;
     constructor(args, options) {
         super(args, options);
-        // this.env = createEnv();
+        this.#env = createEnv();
     }
 
     dump(data) {
@@ -50,7 +50,7 @@ export class Generator<O extends BaseOptions = BaseOptions> extends YeomanGenera
         if (parts.length === 0) {
             return;
         }
-        const first = parts.shift();
+        const first: string = parts.shift() || '';
         this.spawnSync(first, parts);
     }
 
