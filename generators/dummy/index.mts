@@ -5,6 +5,7 @@ export default class extends Generator {
         super(args, opts);
         // this.argument('name', { type: String, required: true });
         // this.log(this.options.name);
+        // console.log('DUMMY');
     }
 
     async writing() {}

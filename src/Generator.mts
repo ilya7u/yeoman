@@ -3,7 +3,6 @@ import { Data as TemplateData, Options as TemplateOptions } from 'ejs';
 import path from 'path';
 import { inspect } from 'util';
 import fs from 'fs';
-export { BaseOptions };
 import { createEnv } from 'yeoman-environment';
 
 interface AnyProperties {
@@ -14,6 +13,8 @@ export type CopyOptions = AnyProperties & {
     process?: (contents: string | Buffer, filepath: string, destination: string) => string | Buffer;
     processDestinationPath?: (string: any) => string;
 };
+
+export type Options = BaseOptions;
 
 export interface CopyTemplatesOptions {
     context?: TemplateData;
@@ -35,10 +36,17 @@ function getFiles(baseDir: string, subDirs: string[] = []) {
 }
 
 export class Generator<O extends BaseOptions = BaseOptions> extends YeomanGenerator<O> {
-    #env;
     constructor(args, options) {
         super(args, options);
-        this.#env = createEnv();
+    }
+
+    async test() {
+        const env = createEnv();
+        await env.lookupLocalPackages();
+        await env.execute('dummy:dummy', []);
+        // await env.run(['dummy:dummy']);
+
+        // console.log(JSON.stringify(result, null, 4));
     }
 
     dump(data) {
