@@ -1,9 +1,10 @@
 {
     "name": "@ilya7u/yeoman",
-    "version": "1.0.24",
+    "version": "1.0.25",
     "repository": "git://github.com/ilya7u/yeoman.git",
     "main": "out/src/index.js",
     "types": "out/src/index.d.ts",
+    "type": "module",
     "scripts": {
         "build": "npm run clean && tsc && npm run copydeps",
         "copydeps": "copyfiles -a -u 1 \"generators/*/templates/**\" out/generators && copyfiles -u 1 ./generators/package.json ./out",
@@ -15,7 +16,7 @@
     },
     "dependencies": {
         "ejs": "^3.1.9",
-        "mrm-core": "^7.1.22",
+        "yeoman-environment": "^4.4.0",
         "yeoman-generator": "^7.1.1"
     },
     "devDependencies": {
